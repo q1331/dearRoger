@@ -63,8 +63,34 @@
     
 	<!--<div class="span4 text-center" style="margin-top:-5%;"><img src="image/iwhite.png" alt="iphone white"></div>-->
 	<div class="span4 text-center" style="margin-top:-5%;"><img src="image/s4_Template.png" alt="iphone white"></div>
-	
-	
+	<input id="btn1" type="button" class="btn" value="变换" />
+
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function () {
+
+
+			$("#btn1").click(function(){
+				var x = 100;
+				var y = 900;
+				var num = Math.floor(Math.random() * 3 + 1);
+				var index=$('.demo').children('img').length;
+				var rand = parseInt(Math.random() * (x - y + 1) + y);
+
+				$(".demo").append("<img src=''>");
+				$('img:eq(' + index + ')').attr('src','images/'+num+'.png')
+				$("img").animate({
+					bottom:"800px",
+					opacity:"0",
+					left: rand,
+				},3000)
+
+			})
+		})
+	</script>
+
+
+
 	<!--==========================================================================-->
 	
 	
@@ -88,21 +114,6 @@
 		<a href="#"><img class="span2" src="image/google-play.png" alt="Google play"></a>
 	</div>
 </div>
-
-
-
-<!--==========================================================================
-     Social Network Unit
-    ==========================================================================-->
-
-<div class="row-fluid">
-	<div class="span12 text-center" style="margin-top:5%;">
-			<a class="social" href="#"><i class="icon-twitter icon-2x"></i></a>
-			<a class="social" href="#"><i class="icon-google-plus icon-2x"></i></a>
-			<a class="social" href="#"><i class="icon-facebook icon-2x"></i></a>
-	</div>
-</div>
-
 
 <!--==========================================================================
      Footer Unit
