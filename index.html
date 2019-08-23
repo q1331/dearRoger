@@ -33,7 +33,22 @@
 <div class="row-fluid">
 	<div class="span12 slogan text-center">
 		<img class="logo" src="image/logo.png" alt="logo">
-		<h1>Hey!<br> <small>We love you.</small></h1>
+		<h1 id="changeText">Hey!<br> <small>cmft time</small></h1>
+		<script>
+			var text = ["17:59:57", "17:59:58", "17:59:59"];
+			var counter = 0;
+			var elem = document.getElementById("changeText");
+			var inst = setInterval(change, 1000);
+
+			function change() {
+				elem.innerHTML = text[counter];
+				counter++;
+				if (counter >= text.length) {
+					counter = 0;
+					// clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
+				}
+			}
+		</script>
 	</div>
 </div>
 
